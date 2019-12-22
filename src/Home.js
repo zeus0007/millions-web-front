@@ -1,17 +1,18 @@
 import React from 'react';
-import logo from './logo_text.png';
-import './Home.css';
+import './Style.css';
+import { Link } from 'react-router-dom'
 
-export default class Home extends React.Component {
-    render() {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} alt="logo" className="Logo" />
-                    <a className="Button">로그인</a>
-                    <span> 아직 회원가입을 안하셨나요? <a>회원가입</a></span>
-                </header>
-            </div >
-        );
-    }
+class Home extends React.Component {
+  render() {
+    return (
+      <div className="MainContainer">
+        <Link to="/login">
+          <button className="BaroLogin">바로 로그인</button><br />
+        </Link>
+        <span> 아직 회원가입을 안하셨나요? <Link to="/join">회원가입</Link></span>
+      </div >
+    );
+  }
 }
+
+export default Home;
