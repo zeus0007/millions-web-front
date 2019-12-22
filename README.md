@@ -9,7 +9,7 @@
 ### `cd millionswebfront`
 ### `npm install`
 ### `src폴더안에 environment.js를 생성`
-### `아래 내용을 입력` 후 저장
+### `아래 내용을 입력 후 저장` 
 import config from "./config.json";
 
 const ENV_MAP = {
