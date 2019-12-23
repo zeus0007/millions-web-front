@@ -21,7 +21,7 @@ const ENV_MAP = {
 };
 
 export default ENV_MAP[config.REACT_NATIVE_ENV] || ENV_MAP.development;
-
+---
 * 본인의 로컬 ip는 ipconfig나 ifconfig를 통해서 각자 찾으세요.
 * 장고 백엔드를 돌리지 않고 실행하고 싶으면 ""공백으로 남겨 놓으세요.
 
