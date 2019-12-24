@@ -5,24 +5,28 @@ import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
 import Home from "./Home"
 import Login from "./Login"
 import Join from "./Join"
+import MainScreen from "./MainScreen"
+
+
 
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
         <Router>
-          <header >
-            <Link to="/">
-              <img src={logo} alt="logo" className="Logo" />
-            </Link>
+          <header>
+            
           </header>
           <main className="Main">
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/join" component={Join} />
+            <div className="App">
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/join" component={Join} />            
+            </div>
+            <Route path="/MainScreen" component={MainScreen} />
           </main>
         </Router>
-      </div >
+          
+      
     );
   }
 }
