@@ -1,7 +1,7 @@
 import axios from "axios";
 import ENV from "./environment";
 
-axios.defaults.baseURL = ENV.BACKEND_HOST;
+axios.defaults.baseURL = "http://192.168.56.1:8000";
 
 export default {
   readTimer() {
@@ -21,5 +21,11 @@ export default {
   },
   postJoin(data) {
     return axios.post("/join/", data);
-  }
+  },
+
+  postSignUp(data){
+    return axios.post("/rest-auth/registration/",data);
+  },
+  
+
 };
