@@ -34,7 +34,7 @@ class MainScreen extends React.Component {
             </Link>
             <div className="App">
 
-             <UserChallengeList title = "코딩">
+            <UserChallengeList title = "코딩">
             </UserChallengeList>
             <UserChallengeList title = "운동">
             </UserChallengeList>
