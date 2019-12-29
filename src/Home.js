@@ -1,6 +1,8 @@
 import React from 'react';
 import './Style.css';
-import { Link } from 'react-router-dom'
+import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
+import Login from "./Login"
+import Join from "./Join"
 
 class Home extends React.Component {
   render() {
