@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import './Style.css';
 import { Link } from 'react-router-dom'
@@ -18,7 +19,7 @@ function UserChallengeList(props){
                 {props.title}
             </div>
             <UserChallengeListButton button="button">
-                측정       
+                측정
             </UserChallengeListButton>
         </div>
     )
@@ -26,7 +27,7 @@ function UserChallengeList(props){
 
 
 class MainScreen extends React.Component {
-  render() { 
+  render() {
     return (
         <body>
             <Link to="/">
@@ -42,10 +43,11 @@ class MainScreen extends React.Component {
             </UserChallengeList>
             </div>
         </body>
-     
+
 
     );
   }
 }
 
 export default MainScreen;
+*/
