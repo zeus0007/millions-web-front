@@ -26,33 +26,23 @@ function UserChallengeList(props){
 
 
 class MainScreen extends React.Component {
-    
+  render() { 
+    return (
+        <body>
+            <Link to="/">
+                    <img src={logo} alt="logo" className="LogoMainScreen" />
+            </Link>
+            <div className="App">
 
-    // constructor(props){
-    //     super(props)
-    //     this.state = {
-    //         ss       
-    //     }
-    // }
-    
-
-    render() { 
-        return (
-            <body>
-                <Link to="/">
-                        <img src={logo} alt="logo" className="LogoMainScreen" />
-                </Link>
-                <div className="App">
-
-                <UserChallengeList title = "코딩">
-                </UserChallengeList>
-                <UserChallengeList title = "운동">
-                </UserChallengeList>
-                <UserChallengeList title = "독서">
-                </UserChallengeList>
-                </div>
-            </body>
-        
+            <UserChallengeList title = "코딩">
+            </UserChallengeList>
+            <UserChallengeList title = "운동">
+            </UserChallengeList>
+            <UserChallengeList title = "독서">
+            </UserChallengeList>
+            </div>
+        </body>
+     
 
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-//import logo from './logo_text.png';
+import logo from './logo_text.png';
 import './Style.css';
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
 import Home from "./Home"
@@ -16,6 +16,7 @@ class App extends React.Component {
           <header>
             
           </header>
+
           <main className="Main">
             <div className="App">
               <Route exact path="/" component={Home} />
@@ -24,9 +25,8 @@ class App extends React.Component {
             </div>
             <Route path="/MainScreen" component={MainScreen} />
           </main>
-        </Router>
           
-      
+        </Router>
     );
   }
 }
