@@ -1,7 +1,5 @@
 import React from 'react';
 import './Style.css';
-import logo from './logo_text.png';
-import { Link } from 'react-router-dom'
 import api from './RequestCRUD'
 
 class Join extends React.Component {

@@ -1,9 +1,7 @@
 import React from 'react';
 import logo from './logo_text.png';
 import './Style.css';
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
-import MainTimer from './MainTimer';
-import SubjectLists from "./SubjectLists"
+import { Link } from 'react-router-dom'
 
 class Main extends React.Component {
     render() {

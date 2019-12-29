@@ -1,6 +1,6 @@
 import React from 'react';
 import './Style.css';
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class SubjectLists extends React.Component {
     render() {
