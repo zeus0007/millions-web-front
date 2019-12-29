@@ -22,8 +22,8 @@ class Join extends React.Component {
         this.setState({ username: this.state.user_name, email: this.state.email, password1: this.state.user_pw, password2: this.state.user_pw2 }) // state 설정
         console.log(result, "데이터 전송 성공")
 
-        // Login Page로 Redirect
-    }
+        this.props.history.push('/MainScreen');
+    }   
 
     render() {
         return (
