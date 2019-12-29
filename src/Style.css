@@ -13,10 +13,19 @@ html{
 .Logo {
   width: 28rem;
 }
+<<<<<<< HEAD
 .LogoMainScreen{
 
   width: 16rem;
 }
+=======
+
+.LogoMainScreen{
+  
+  width: 16rem;
+}
+
+>>>>>>> abb605385e93d7836d01d49dd6cfbc88a9f18eea
 p{
   margin: 1px;
 }
@@ -61,13 +70,22 @@ Main{
   border-radius: 3px;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> abb605385e93d7836d01d49dd6cfbc88a9f18eea
 .UserChallengeListBoarder{
   background: white;
   display: flex;
   flex-direction: column-reverse;
   width: 512px;
   height: 200px;
+<<<<<<< HEAD
   box-shadow: 0 3px 6px rgba(252, 244, 244, 0.16), 0 3px 6px rgba(0,0,0,0.23); /* 그림자 */ 
+=======
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /* 그림자 */ 
+>>>>>>> abb605385e93d7836d01d49dd6cfbc88a9f18eea
   margin: 0 auto; /* 페이지 중앙 정렬 */
   margin-top: 4rem;
 }
@@ -85,4 +103,9 @@ Main{
     margin: 4px;
     cursor: pointer;
 
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> abb605385e93d7836d01d49dd6cfbc88a9f18eea
