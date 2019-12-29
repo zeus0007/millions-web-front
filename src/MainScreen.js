@@ -24,7 +24,6 @@ function UserChallengeList(props){
     )
 }
 
-
 class MainScreen extends React.Component {
   render() { 
     return (
@@ -32,18 +31,16 @@ class MainScreen extends React.Component {
             <Link to="/">
                     <img src={logo} alt="logo" className="LogoMainScreen" />
             </Link>
-            <div className="App">
 
-            <UserChallengeList title = "코딩">
-            </UserChallengeList>
-            <UserChallengeList title = "운동">
-            </UserChallengeList>
-            <UserChallengeList title = "독서">
-            </UserChallengeList>
+            <div className="App">
+                <UserChallengeList title = "코딩">
+                </UserChallengeList>
+                <UserChallengeList title = "운동">
+                </UserChallengeList>
+                <UserChallengeList title = "독서">
+                </UserChallengeList>
             </div>
         </body>
-     
-
     );
   }
 }

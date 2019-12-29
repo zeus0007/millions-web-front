@@ -36,7 +36,7 @@ export default {
   },
 
   postLogin(data) {
-    return axios.post("/api-auth/login/", data);
+    return axios.post("/rest-auth/login/", data);
   },
 
   postJoin(data) {
