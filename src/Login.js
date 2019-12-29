@@ -7,9 +7,6 @@ class Login extends React.Component {
     render() {
         return (
             <div >
-                <Link to="/">
-                    <img src={logo} alt="logo" className="Logo" />
-                </Link>
                 <form action="/" method="POST">
                     <p>아이디</p>
                     <input className="TextBox" type="text" placeholder="아이디"></input><br />

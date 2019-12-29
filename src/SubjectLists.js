@@ -19,7 +19,7 @@ class SubjectLists extends React.Component {
 
 function UserChallengeListButton(props) {
     return (
-        <Link to="/mainTimer">
+        <Link to="/main/mainTimer">
             <div className={'UserChallengeList-button'}>
                 {props.children}
             </div>
