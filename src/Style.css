@@ -13,12 +13,10 @@ html{
 .Logo {
   width: 28rem;
 }
-
 .LogoMainScreen{
-  
+
   width: 16rem;
 }
-
 p{
   margin: 1px;
 }
@@ -90,4 +88,3 @@ Main{
     cursor: pointer;
 
 }
-

@@ -1,32 +1,23 @@
 import React from 'react';
-import logo from './logo_text.png';
 import './Style.css';
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom'
-import Home from "./Home"
-import Login from "./Login"
-import Join from "./Join"
-import MainScreen from "./MainScreen"
-
-
+import HomeApp from "./HomeApp"
+import Main from "./Main"
+import SubjectLists from "./SubjectLists"
+import MainTimer from "./MainTimer"
 
 class App extends React.Component {
   render() {
     return (
+      <div className="App">
         <Router>
-          <header>
-            
-          </header>
-
-          <main className="Main">
-            <div className="App">
-              <Route exact path="/" component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/join" component={Join} />            
-            </div>
-            <Route path="/MainScreen" component={MainScreen} />
-          </main>
-          
+          <Route exact path="/" component={HomeApp} />
+          <Route path="/main" component={Main} />
+          <Route exact path="/main" component={SubjectLists} />
+          <Route path="/main/mainTimer" component={MainTimer} />
+          <Link to="/main">Go to main</Link>
         </Router>
+      </div >
     );
   }
 }

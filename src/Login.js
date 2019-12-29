@@ -3,7 +3,7 @@ import './Style.css';
 import logo from './logo_text.png';
 import { Link } from 'react-router-dom';
 import api from './RequestCRUD';
-
+import { Link } from 'react-router-dom'
 
 class Login extends React.Component {
 
@@ -22,11 +22,14 @@ class Login extends React.Component {
         let result = await api.postLogin({ username : this.state.user_name, password : this.state.user_pw })
         this.setState({ username : this.state.user_name, email : "", password : this.state.user_pw }) // state 설정
         console.log(result, "데이터 전송 성공")
+
+        this.props.history.push('/MainScreen');
         
-        /* result.header를 통해 Login처리오류 처리 */
+        /* result(HTTP response).header를 통해 Login 오류 처리 */
         /*if(result.header){
 
         }
+
         else{
             this.props.history.push('/MainScreen');
         }*/
@@ -35,7 +38,7 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div >
+            <div>
                 <Link to="/">
                     <img src={logo} alt="logo" className="Logo" />
                 </Link>
@@ -51,7 +54,7 @@ class Login extends React.Component {
                 </form>
 
                 <span> 아직 회원가입을 안하셨나요? <Link to="/join">회원가입</Link></span>
-            </div >
+            </div>
         );
     }
 }
