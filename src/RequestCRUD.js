@@ -1,7 +1,7 @@
 import axios from "axios";
 import ENV from "./environment";
 
-axios.defaults.baseURL = ENV.BACKEND_HOST; // Global axios defaults
+axios.defaults.baseURL = "http://192.168.56.1:8000"; // Global axios defaults
 
 // Axios 관련 Document : https://github.com/axios/axios
 // Django rest-auth Document : https://django-rest-auth.readthedocs.io/en/latest/
@@ -36,7 +36,7 @@ export default {
   },
 
   postLogin(data) {
-    return axios.post("/api-auth/login/", data);
+    return axios.post("/rest-auth/login/", data);
   },
 
   postJoin(data) {

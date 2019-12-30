@@ -1,16 +1,14 @@
 import React from 'react';
 import './Style.css';
-import logo from './logo_text.png';
-import { Link } from 'react-router-dom'
 import api from './RequestCRUD'
 
 class Join extends React.Component {
-    constrcutor(props){
-        this.state={ user_name: "", email: "", user_pw: "", user_pw2: "", }
+    constrcutor(props) {
+        this.state = { user_name: "", email: "", user_pw: "", user_pw2: "", }
     }
-    
+
     handlingJoin = (event) => { // handling Change Function
-        this.setState({[event.target.name]: event.target.value}) // state 설정
+        this.setState({ [event.target.name]: event.target.value }) // state 설정
     }
 
     connectSignUp = async (event) => { // transfer Data to API server through AXIOS ( RequestCRUD.js )
@@ -20,20 +18,16 @@ class Join extends React.Component {
 
         console.log(this.state.user_name, this.state.email, this.state.user_pw, this.state.user_pw2)
 
-        let result = await api.postJoin({ username : this.state.user_name, email: this.state.email, password1 : this.state.user_pw, password2 : this.state.user_pw2})
-        this.setState({ username : this.state.user_name, email : this.state.email, password1 : this.state.user_pw, password2 : this.state.user_pw2 }) // state 설정
+        let result = await api.postJoin({ username: this.state.user_name, email: this.state.email, password1: this.state.user_pw, password2: this.state.user_pw2 })
+        this.setState({ username: this.state.user_name, email: this.state.email, password1: this.state.user_pw, password2: this.state.user_pw2 }) // state 설정
         console.log(result, "데이터 전송 성공")
 
-        // Login Page로 Redirect
-    }
-    
+        this.props.history.push('/MainScreen');
+    }   
+
     render() {
         return (
             <div>
-                <Link to="/"> 
-                    <img src={logo} alt="logo" className="Logo" />
-                </Link>
-
                 <form action="" method="POST" onSubmit={this.connectSignUp}>
 
                     <p>아이디</p>

@@ -24,26 +24,35 @@ function UserChallengeList(props){
     )
 }
 
-
 class MainScreen extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            category: '',
+        }
+    }
+
+    handlingChange = (event) =>{
+        this.setState{title : event.target.value}
+    }
+
   render() { 
     return (
         <body>
             <Link to="/">
                     <img src={logo} alt="logo" className="LogoMainScreen" />
             </Link>
-            <div className="App">
 
-            <UserChallengeList title = "코딩">
-            </UserChallengeList>
-            <UserChallengeList title = "운동">
-            </UserChallengeList>
-            <UserChallengeList title = "독서">
-            </UserChallengeList>
+            <div className="App">
+                <UserChallengeList title = "코딩">
+                </UserChallengeList>
+                <UserChallengeList title = "운동">
+                </UserChallengeList>
+                <UserChallengeList title = "독서">
+                </UserChallengeList>
             </div>
         </body>
-     
-
     );
   }
 }
