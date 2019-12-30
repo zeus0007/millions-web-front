@@ -16,13 +16,23 @@ class Join extends React.Component {
         console.log("데이터 전송 시작")
         event.preventDefault() // event 기능을 막음, 특히 submit을 눌렀을 때 새로고침되는 것을 막기위해서
 
-        console.log(this.state.user_name, this.state.email, this.state.user_pw, this.state.user_pw2)
+        //console.log(this.state.user_name, this.state.email, this.state.user_pw, this.state.user_pw2)
+        
+        let result = null;
 
-        let result = await api.postJoin({ username: this.state.user_name, email: this.state.email, password1: this.state.user_pw, password2: this.state.user_pw2 })
-        this.setState({ username: this.state.user_name, email: this.state.email, password1: this.state.user_pw, password2: this.state.user_pw2 }) // state 설정
-        console.log(result, "데이터 전송 성공")
-
-        this.props.history.push('/MainScreen');
+        try{
+            let result = await api.postJoin({ username: this.state.user_name, email: this.state.email, password1: this.state.user_pw, password2: this.state.user_pw2 }) // response를 반환
+            this.setState({
+                username: this.state.user_name, email: this.state.email, password1: this.state.user_pw, password2: this.state.user_pw2 }) // state 설정
+            console.log(result, "데이터 전송 성공")
+            this.props.history.push('/MainScreen');
+        }
+        catch(error){
+            if(error.response.status == 400){
+                alert('회원가입을 하는 과정중 오류가 발생했습니다. 다시 해주세요')
+                console.log(error, "BAD Request, 데이터 전송 실패")
+            }
+        }
     }   
 
     render() {
