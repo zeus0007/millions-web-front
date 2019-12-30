@@ -8,6 +8,12 @@ import Login from "./Login"
 import Join from "./Join"
 
 class HomeApp extends React.Component {
+    
+    constructor(props){
+        super(props)
+        
+    }
+    
     render() {
         return (
             <div className="MainContainer">

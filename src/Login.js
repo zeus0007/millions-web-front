@@ -4,6 +4,7 @@ import logo from './logo_text.png';
 import { Link } from 'react-router-dom';
 import api from './RequestCRUD';
 
+
 class Login extends React.Component {
 
     constructor(props){
@@ -14,6 +15,7 @@ class Login extends React.Component {
     handlingLogin = (event) => { // handling Change Function
         this.setState({[event.target.name]: event.target.value}) // state 설정
     }
+    
 
     connectLogin = async (event) => { // transfer Data to API server through AXIOS ( RequestCRUD.js )
         console.log("데이터 전송 시작")
@@ -24,10 +26,10 @@ class Login extends React.Component {
             username : this.state.user_name, email : "", 
             password : this.state.user_pw }) // state 설정
         console.log(result, "데이터 전송 성공")
-        this.props.onLogin();
+            
         this.doSignUp();
             
-       // this.props.history.push('/main');
+        this.props.history.push('/main');
         /* result(HTTP response).header를 통해 Login 오류 처리 */
         /*if(result.header){
 
@@ -38,6 +40,7 @@ class Login extends React.Component {
         }*/
 
     }
+   
 
     doSignUp = () =>{
         const {user_name, user_pw} = this.state;
@@ -50,9 +53,6 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <Link to="/">
-                    <img src={logo} alt="logo" className="Logo" />
-                </Link>
 
                 <form action="/" method="POST" onSubmit={this.connectLogin}>
                     <p>아이디</p>
@@ -69,5 +69,7 @@ class Login extends React.Component {
         );
     }
 }
+
+
 
 export default Login;

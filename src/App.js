@@ -51,12 +51,10 @@ componentDidMount(){
       
       <Store.Provider value={this.state}>
         <Router>
-        <Login onLogin = {this.onLogin}></Login>
-
-          <Header logged={logged} onLogout = {onLogout}>
-          </Header>
+          
+          <Header logged={logged} onLogout = {onLogout}></Header>
           <Route exact path="/" component={HomeApp} />
-          <Route path="/main" component={Main} />
+          <Route path="/main"  component={Main} />
           <Route exact path="/main" component={SubjectLists} />
           <Route path="/main/mainTimer" component={MainTimer} />
           <Link to="/main">Go to main</Link>

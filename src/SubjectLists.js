@@ -1,14 +1,30 @@
 import React from 'react';
 import './Style.css';
 import { Link } from 'react-router-dom'
+import api from './RequestCRUD';
 
 class SubjectLists extends React.Component {
+    
+    constructor(props){
+        super(props);
+        this.state={ timerList:[] }
+    }
 
+    async GetTimerList(){ // transfer Data to API server through AXIOS ( RequestCRUD.js )
+        let result = await api.readTimer()
+        this.setState({ 
+            timerList : result.data}) // state 설정      
+    }
+
+    componentDidMount(){
+        this.GetTimerList();
+    }
 
     render() {
         return (
-            
             <div className="App">
+                {this.GetTimerList}
+                <h2>{this.state.timerList[0]}</h2>
                 <USER></USER>
                 <UserChallengeList title="코딩">
                 </UserChallengeList>
@@ -20,6 +36,11 @@ class SubjectLists extends React.Component {
         );
     }
 }
+
+function UserCategory(props){
+    
+}
+
 
 function USER(props){
     const id = window.sessionStorage.getItem('user_name');
