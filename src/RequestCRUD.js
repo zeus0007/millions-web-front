@@ -19,8 +19,15 @@ axios.defaults.baseURL = "http://192.168.56.1:8000"; // Global axios defaults
 
 export default {
   
+
+
   readTimer() {
-    return axios.get("/timer/");
+    return axios.get("/timer/",{
+      auth: {
+        username: window.sessionStorage.getItem('user_name'),
+        password: window.sessionStorage.getItem('user_pw')
+      }
+    });
   },
 
   createTimer(data) {

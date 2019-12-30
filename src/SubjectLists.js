@@ -7,13 +7,17 @@ class SubjectLists extends React.Component {
     
     constructor(props){
         super(props);
-        this.state={ timerList:[] }
+        this.state={
+            timerList:[]
+         };
     }
 
     async GetTimerList(){ // transfer Data to API server through AXIOS ( RequestCRUD.js )
-        let result = await api.readTimer()
-        this.setState({ 
-            timerList : result.data}) // state 설정      
+        let result = await api.readTimer();
+        this.setState({
+            timerList: result.data
+          });
+        console.log(result);
     }
 
     componentDidMount(){
@@ -22,24 +26,22 @@ class SubjectLists extends React.Component {
 
     render() {
         return (
+            
+
             <div className="App">
-                {this.GetTimerList}
-                <h2>{this.state.timerList[0]}</h2>
+                
                 <USER></USER>
-                <UserChallengeList title="코딩">
-                </UserChallengeList>
-                <UserChallengeList title="운동">
-                </UserChallengeList>
-                <UserChallengeList title="독서">
-                </UserChallengeList>
+
+                {this.state.timerList.map(timerSet => (
+                    <UserChallengeList title={timerSet.category}></UserChallengeList>
+                ))}
+
+                
             </div>
         );
     }
 }
 
-function UserCategory(props){
-    
-}
 
 
 function USER(props){
