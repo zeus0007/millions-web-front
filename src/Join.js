@@ -26,17 +26,17 @@ class Join extends React.Component {
                 username: this.state.user_name, email: this.state.email, password1: this.state.user_pw, password2: this.state.user_pw2 }) // state 설정
             
             console.log(result, "데이터 전송 성공")
-            console.log(result.response)
-            console.log(result.response.status)
-            console.log(result.response.request.response, ">> 전송된 response ")
-            console.log(result.response.request.data, ">> 전송된 data ")
+             console.log(result)
+            // console.log(result.response.status)
+            // console.log(result.response.request.response, ">> 전송된 response ")
+            // console.log(result.response.request.data, ">> 전송된 data ")
 
 
-            this.props.history.push('/MainScreen');
+            this.props.history.push('/main');
         }
 
         catch(error){
-            if(error.response.status === 400){
+            if(error.status === 400){
 
                 var error_email = error.response.data.email
                 var error_username = error.response.data.username
@@ -57,9 +57,9 @@ class Join extends React.Component {
                 alert('회원가입을 하는 과정중 오류가 발생했습니다. 다시 해주세요')
                 alert('에러 코드: ' + total_error)
 
-                console.log(error.response.data.email, "BAD Request, 데이터 전송 실패")
-                console.log(error.response.data.username, "BAD Request, 데이터 전송 실패")
-                console.log(error.response.data.password1, "BAD Request, 데이터 전송 실패")
+                console.log(error.data.email, "BAD Request, 데이터 전송 실패")
+                console.log(error.data.username, "BAD Request, 데이터 전송 실패")
+                console.log(error.data.password1, "BAD Request, 데이터 전송 실패")
             }
 
             console.log(total_error)
