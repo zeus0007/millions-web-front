@@ -1,7 +1,7 @@
 import axios from "axios";
-import ENV from "./environment";
+//import ENV from "./environment";
 
-axios.defaults.baseURL = "http://192.168.56.1:8000"; // Global axios defaults
+axios.defaults.baseURL = "http://127.0.0.1:8000"; // Global axios defaults
 
 // Axios 관련 Document : https://github.com/axios/axios
 // Django rest-auth Document : https://django-rest-auth.readthedocs.io/en/latest/
@@ -18,11 +18,11 @@ axios.defaults.baseURL = "http://192.168.56.1:8000"; // Global axios defaults
 // --------------------------------------------------------------------------------------------
 
 export default {
-  
+
 
 
   readTimer() {
-    return axios.get("/timer/",{
+    return axios.get("/timer/", {
       auth: {
         username: window.sessionStorage.getItem('user_name'),
         password: window.sessionStorage.getItem('user_pw')
@@ -34,8 +34,33 @@ export default {
     return axios.post("/timer/", data);
   },
 
-  updateTimer(id) {
-    return axios.update("/timer/" + String(id));
+  updateTimer(id, hour, minute, second, category) {
+    const url = "/timer/" + String(id) + "/";
+    console.log(hour + ":" + minute + ":" + second)
+    return axios
+      .put(
+        url,
+        {
+          pk: id,
+          category,
+          hour,
+          minute,
+          second,
+          is_main_category: false
+        },
+        {
+          auth: {
+            username: window.sessionStorage.getItem('user_name'),
+            password: window.sessionStorage.getItem('user_pw')
+          }
+        }
+      )
+      .catch(error => {
+        console.log(error);
+      })
+      .then(response => {
+        console.log(response);
+      });
   },
 
   deleteTimer(id) {
@@ -48,6 +73,5 @@ export default {
 
   postJoin(data) {
     return axios.post("/rest-auth/registration/", data);
-  },
-
+  }
 };
