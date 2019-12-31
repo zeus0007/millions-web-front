@@ -47,20 +47,23 @@ componentDidMount(){
     const {logged, onLogout} = this.state;
     return (
       
-      <div className="App">
+     
       
       <Store.Provider value={this.state}>
         <Router>
-          
+
           <Header logged={logged} onLogout = {onLogout}></Header>
-          <Route exact path="/" component={HomeApp} />
-          <Route path="/main"  component={Main} />
-          <Route exact path="/main" component={SubjectLists} />
-          <Route path="/main/mainTimer" component={MainTimer} />
+          
+          <div className="App">
+            <Route exact path="/" component={HomeApp} />
+            <Route path="/main"  component={Main} />
+            <Route exact path="/main" component={SubjectLists} />
+            <Route path="/main/mainTimer" component={MainTimer} />
           <Link to="/main">Go to main</Link>
+          </div >
+
         </Router>
         </Store.Provider>
-      </div >
     );
   }
 }

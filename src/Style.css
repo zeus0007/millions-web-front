@@ -23,6 +23,8 @@ p{
 Main{
   margin-top: -60px;
 }
+
+
 .MainContainer{
   text-align: center;
   align-items: center;
@@ -66,25 +68,101 @@ Main{
 .UserChallengeListBoarder{
   background: white;
   display: flex;
-  flex-direction: column-reverse;
   width: 512px;
   height: 200px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /* 그림자 */ 
   margin: 0 auto; /* 페이지 중앙 정렬 */
   margin-top: 4rem;
 }
+.title-boarder{
+  position: relative;
+  left: 20px;
+  margin: 10px;
+  width: 100px;
+}
+.UserChallengeList-title{
+  font-weight: bold;
+  font-style: normal;
+  text-align: left;
+  font-size: x-large;
+  line-height: 200px;
+  color: blue;
+}
+/* .UserChallengeList-button{
+  display:block; 
+  width:200px; height:40px; 
+  line-height:40px; 
+  border:1px #3399dd solid; 
+  margin:15px auto; 
+  background-color:#66aaff; 
+  text-align:center; 
+  cursor: pointer; 
+  color:#333; 
+  transition:all 0.9s, color 0.3;
 
-.UserChallengeList-button{
-    width:100px;
-    background-color: #f8585b;
-    border: none;
-    color:#fff;
-    padding: 15px 0;
-    text-align: right;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    margin: 4px;
-    cursor: pointer;
+} */
 
+.button-boarder{
+  position: relative;
+  top:7rem;
+  left:4rem;
+}
+
+.UserChallengeList-button {
+  background-color: #c47135;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 22px;
+  line-height: 1em;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.UserChallengeList-button:before,
+.UserChallengeList-button:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 24px;
+  position: absolute;
+  width: 24px;
+}
+.UserChallengeList-button:before {
+  border-color: #c47135;
+  border-right-width: 2px;
+  border-top-width: 2px;
+  right: -5px;
+  top: -5px;
+}
+.UserChallengeList-button:after {
+  border-bottom-width: 2px;
+  border-color: #c47135;
+  border-left-width: 2px;
+  bottom: -5px;
+  left: -5px;
+}
+.UserChallengeList-button:hover,
+.UserChallengeList-button.hover {
+  background-color: #c47135;
+}
+.UserChallengeList-button:hover:before,
+.UserChallengeList-button.hover:before,
+.UserChallengeList-button:hover:after,
+.UserChallengeList-button.hover:after {
+  height: 100%;
+  width: 100%;
+}
+
+.Login-Logout-button{
+  font-size: x-large;
+  text-align: right;
 }

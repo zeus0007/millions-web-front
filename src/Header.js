@@ -5,13 +5,17 @@ class Header extends Component{
         const {logged, onLogout} = this.props;
         return(
                     logged ? 
-             <Link to ="/" onClick={onLogout}>로그아웃</Link>:    
-             <Link to = "/login">로그인</Link>
-
+             <Link to ="/" onClick={onLogout}>
+                 <div className="Login-Logout-button">로그아웃</div>
+                </Link>:    
+             null
            
 
         )
     }
 }
+
+
+
 
 export default Header;
