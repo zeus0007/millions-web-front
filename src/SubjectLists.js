@@ -2,7 +2,6 @@ import React from 'react';
 import './Style.css';
 import { Link } from 'react-router-dom'
 import api from './RequestCRUD';
-import runnig from './running.jpg';
 class SubjectLists extends React.Component {
     
     constructor(props){
