@@ -36,7 +36,7 @@ class Join extends React.Component {
         }
 
         catch(error){
-            if(error.status === 400){
+            if(error.response.status === 400){
 
                 var error_email = error.response.data.email
                 var error_username = error.response.data.username

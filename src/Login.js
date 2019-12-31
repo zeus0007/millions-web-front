@@ -49,12 +49,12 @@ class Login extends React.Component {
             this.doSignUp();
         }
         catch(error){
-            if(error.status == 400){
+            if(error.response.status == 400){
                 alert('아이디또는 비밀번호가 틀립니다!!!');
             }
             
             //console.log(error.response)
-            console.log(error.status,  "데이터 전송 실패")
+            console.log(error.response.status,  "데이터 전송 실패")
             //console.log(error.response.request.response)
         }
     }
