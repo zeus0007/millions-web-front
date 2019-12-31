@@ -20,25 +20,41 @@ class Login extends React.Component {
     connectLogin = async (event) => { // transfer Data to API server through AXIOS ( RequestCRUD.js )
         console.log("데이터 전송 시작")
         event.preventDefault() // event 기능을 막음, 특히 submit을 눌렀을 때 새로고침되는 것을 막기위해서
-        console.log( this.state.user_name, this.state.user_pw )
-        let result = await api.postLogin({ username : this.state.user_name, password : this.state.user_pw })
-        this.setState({ 
-            username : this.state.user_name, email : "", 
-            password : this.state.user_pw }) // state 설정
-        console.log(result, "데이터 전송 성공")
+        //console.log( this.state.user_name, this.state.user_pw )
+        
+        
+        let result = null;
+        
+        /* 에러 O => Response */
+        // error.response
+        // error.response.request.response (JSON)
+        
+        /* 에러 X => Response */
+        // result.response
+        // result.response.request.response (JSON)
+        
+        try{
+            let result = await api.postLogin({ username : this.state.user_name, password : this.state.user_pw })
+            this.setState({ username : this.state.user_name, email : "", password : this.state.user_pw }) // state 설정
             
-        this.doSignUp();
+            console.log(result.response)
+            console.log(result.response.status)
+            console.log(result.response.request.response, ">> 데이터 전송 성공")
+            console.log(result.response.request.data, ">> 전송된 데이터")
             
-        this.props.history.push('/main');
-        /* result(HTTP response).header를 통해 Login 오류 처리 */
-        /*if(result.header){
-
+            this.props.history.push('/MainScreen')
+            
+            this.doSignUp();
         }
-
-        else{
-            this.props.history.push('/MainScreen');
-        }*/
-
+        catch(error){
+            if(error.response.status == 400){
+                alert('아이디또는 비밀번호가 틀립니다!!!');
+            }
+            
+            console.log(error.response)
+            console.log(error.response.status, error.response.statusText, "데이터 전송 실패")
+            console.log(error.response.request.response)
+        }
     }
    
 
