@@ -2,7 +2,7 @@ import React from 'react';
 import './Style.css';
 import { Link } from 'react-router-dom'
 import api from './RequestCRUD';
-
+import runnig from './running.jpg';
 class SubjectLists extends React.Component {
     
     constructor(props){
@@ -46,16 +46,15 @@ class SubjectLists extends React.Component {
 
 function USER(props){
     const id = window.sessionStorage.getItem('user_name');
-
     return(
-        <h2>hi {id}</h2>
+        <h4> {id}님의 도전 LIST</h4>
     )
 }
 
 function UserChallengeListButton(props) {
     return (
         <Link to="/main/mainTimer">
-            <div className={'UserChallengeList-button'}>
+            <div className={'UserChallengeList-button hover1'}>
                 {props.children}
             </div>
         </Link>
@@ -66,12 +65,16 @@ function UserChallengeList(props) {
     
     return (
         <div className={'UserChallengeListBoarder'}>
-            <div className={'UserChallengeList title'}>
-                {props.title}
+            <div className={'title-boarder'}>
+                <div className={'UserChallengeList-title'}>
+                    {props.title}
+                </div>
             </div>
-            <UserChallengeListButton button="button">
-                측정
-            </UserChallengeListButton>
+            <div className={'button-boarder'}>
+                <UserChallengeListButton button="button">
+                    측정
+                </UserChallengeListButton>
+            </div>
         </div>
     )
 }
